@@ -12,7 +12,7 @@
 
 ## 範例
 
-<img src = "https://github.com/seanhung07/crypto-information-linebot/blob/main/4.png" width="200" height="200">
-<img src = "https://github.com/seanhung07/crypto-information-linebot/blob/main/1.png" width="200" height="200">
-<img src = "https://github.com/seanhung07/crypto-information-linebot/blob/main/2.png" width="200" height="200">
-<img src = "https://github.com/seanhung07/crypto-information-linebot/blob/main/3.png" width="200" height="200">
+<img src = "https://github.com/seanhung07/crypto-information-linebot/blob/main/4.png" width="500" height="400">
+<img src = "https://github.com/seanhung07/crypto-information-linebot/blob/main/1.png" width="500" height="600">
+<img src = "https://github.com/seanhung07/crypto-information-linebot/blob/main/2.png" width="500" height="300">
+<img src = "https://github.com/seanhung07/crypto-information-linebot/blob/main/3.png" width="500" height="400">
