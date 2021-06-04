@@ -14,12 +14,12 @@
 
 <img src = "https://github.com/seanhung07/crypto-information-linebot/blob/main/img/4.png" width="500" height="400">
 <img src = "https://github.com/seanhung07/crypto-information-linebot/blob/main/img/1.png" width="500" height="600">
-<img src = "https://github.com/seanhung07/crypto-information-linebot/blob/main/img/2.png" width="500" height="300">
+<img src = "https://github.com/seanhung07/crypto-information-linebot/blob/main/img/2.png" width="500" height="200">
 <img src = "https://github.com/seanhung07/crypto-information-linebot/blob/main/img/3.png" width="500" height="400">
 
 ## How to create Line Bot
 
-1. Login in to https://developers.line.biz/ choose Messagging API
+1. Login in to https://developers.line.biz/  </br> Choose Messagging API
 
 <img src = "https://github.com/seanhung07/crypto-information-linebot/blob/main/img/explain1.png">
 
@@ -51,5 +51,19 @@ sudo snap install --classic heroku
   - [64-bit](https://cli-assets.heroku.com/heroku-x64.exe)
   - [32-bit](https://cli-assets.heroku.com/heroku-x86.exe)
 ## Heroku CLi Login
+```
+heroku login
+```
 <img src = "https://github.com/seanhung07/crypto-information-linebot/blob/main/img/login.png">
 
+```
+heroku git:remote -a [your heroku app name]
+heroku git:remote -a sean-crypto-information
+```
+## Upload your project to Heroku
+
+```
+git add .
+git commit -am'any description'
+git push heroku master
+```
