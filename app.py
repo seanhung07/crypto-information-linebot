@@ -79,6 +79,15 @@ def handle_message(event):
         msga = "查詢\n 1. 板塊\n 2. 貪婪指標\n 3. 漲跌分佈 \n 4. 市佔率"
         message = TextSendMessage(text=msga)
         line_bot_api.reply_message(event.reply_token, message)
+    elif '新聞' == msg:
+        response5 = requests.get("https://www.abmedia.io/wp-json/wp/v2/posts?categories_exclude=3818%2C3819%2C3820%2C3782%2C1&per_page=9")
+        newsjson = json.loads(response5.text)
+        # print(newsjson[0]['title']['rendered']+"\n"+newsjson[0]['link'])
+        report = ""
+        for i in range(8):
+            report+= str(i+1)+". "+newsjson[i]['title']['rendered']+"\n"+newsjson[i]['link']+"\n\n"
+        message = TextSendMessage(text=report)
+        line_bot_api.reply_message(event.reply_token, message)
     elif '嗨' == msg or 'hi'==msg:
         msg = "不要再跟我說嗨了～快打 help"
         message = TextSendMessage(text=msg)
