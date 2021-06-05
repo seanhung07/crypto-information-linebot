@@ -76,7 +76,7 @@ def handle_message(event):
         message = TextSendMessage(text=list)
         line_bot_api.reply_message(event.reply_token, message)
     elif 'help' == msg or '幫助'== msg:
-        msga = "查詢\n 1. 板塊\n 2. 貪婪指標\n 3. 漲跌分佈 \n 4. 市佔率"
+        msga = "查詢\n 1. 板塊\n 2. 貪婪指標\n 3. 漲跌分佈 \n 4. 市佔率\n 5. 新聞\n 6.市場情況"
         message = TextSendMessage(text=msga)
         line_bot_api.reply_message(event.reply_token, message)
     elif '新聞' == msg:
@@ -87,6 +87,15 @@ def handle_message(event):
         for i in range(8):
             report+= str(i+1)+". "+newsjson[i]['title']['rendered']+"\n"+newsjson[i]['link']+"\n\n"
         message = TextSendMessage(text=report)
+        line_bot_api.reply_message(event.reply_token, message)
+    elif '市場情況' == msg:
+        response6 = requests.get("https://dncapi.bqrank.net/api/v2/news/action_stat?webp=1")
+        lookjson = json.loads(response6.text)
+        up = lookjson['data']['items'][0]['ratio']
+        no = lookjson['data']['items'][1]['ratio']
+        down = lookjson['data']['items'][2]['ratio']
+        combine = "看漲: "+str(up)+" %\n"+"空手： "+str(no)+" %\n"+"看跌: "+str(down)+" %\n"
+        message = TextSendMessage(text=combine)
         line_bot_api.reply_message(event.reply_token, message)
     elif '嗨' == msg or 'hi'==msg:
         msg = "不要再跟我說嗨了～快打 help"
